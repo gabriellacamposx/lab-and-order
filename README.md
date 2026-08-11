@@ -48,7 +48,6 @@ relatório técnico final.
 | Função de cada integrante | Definida |
 | Logo da equipe | Definida |
 | Repositório no GitHub | Criado e compartilhado |
-| Nome do projeto | Lab&Order |
 | Slogan ou frase de identificação | Decodificando crimes, restaurando a ordem |
 | Objetivo do projeto no GPA | Criado |
 
