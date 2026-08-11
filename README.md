@@ -2,7 +2,9 @@
 
 Equipe do Projeto Integrador de Perícia Computacional — Análise e Desenvolvimento de Sistemas, UNICEPLAC, 5º semestre de 2026.
 
-<img src="docs/identidade/labandorder-assinatura-horizontal.svg" width="600" alt="Lab&Order">
+<p align="center">
+  <img src="docs/identidade/labandorder-assinatura-horizontal.svg" width="600" alt="Lab&Order">
+</p>
 
 ## Sobre o projeto
 
