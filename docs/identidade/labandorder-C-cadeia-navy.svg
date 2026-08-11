@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="512" height="512" role="img" aria-label="Lab&amp;Order">
+<title>Lab&amp;Order</title>
+<path d="M34 21 H23 V75 H34" fill="none" stroke="#132C52" stroke-width="7.5"/>
+<path d="M62 21 H73 V75 H62" fill="none" stroke="#132C52" stroke-width="7.5"/>
+<rect x="46.25" y="31" width="3.5" height="34" fill="#132C52"/>
+<circle cx="48" cy="31" r="6" fill="#132C52"/>
+<circle cx="48" cy="48" r="6" fill="#2C6BD8"/>
+<circle cx="48" cy="65" r="6" fill="#132C52"/>
+</svg>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="512" height="512" role="img" aria-label="Lab&amp;Order">
+<title>Lab&amp;Order</title>
+<path d="M19 20.5 H62 L75.5 34 V75.5 H19 Z" fill="none" stroke="#0A0F1A" stroke-width="7.5"/>
+<rect x="31" y="42" width="34" height="6.5" fill="#0A0F1A"/>
+<rect x="31" y="53.5" width="22" height="6.5" fill="#0A0F1A"/>
+<rect x="31" y="65" width="11" height="6.5" fill="#0A0F1A"/>
+</svg>

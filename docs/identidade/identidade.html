@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab&amp;Order — Dossiê de Identidade Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0F1A;
+    --navy:#132C52;
+    --graphite:#333B45;
+    --gray:#79828F;
+    --line:#D9DCE2;
+    --line-soft:#EAECF0;
+    --paper:#F2F3F5;
+    --white:#FFFFFF;
+    --blue:#2C6BD8;
+    --display:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+    --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px 96px}
+
+  /* ---------- utilitários tipográficos ---------- */
+  .tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gray);
+  }
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+  h1,h2,h3,h4{font-family:var(--display);margin:0;font-weight:600;letter-spacing:-.01em}
+  p{margin:0}
+  .lead{font-size:16.5px;color:var(--graphite);max-width:62ch}
+  .note{font-size:13.5px;color:var(--gray)}
+
+  /* ---------- capa ---------- */
+  .cover{padding:64px 0 40px}
+  .cover .kicker{display:flex;gap:14px;align-items:center;margin-bottom:38px}
+  .cover .kicker span:last-child{color:var(--graphite)}
+  .cover h1{
+    font-size:clamp(44px,8vw,88px);line-height:.94;font-weight:700;
+    letter-spacing:-.035em;color:var(--ink);
+  }
+  .cover h1 em{font-style:normal;color:var(--blue)}
+  .cover .sub{
+    margin-top:22px;font-family:var(--display);font-weight:500;
+    font-size:clamp(15px,2.2vw,19px);letter-spacing:.02em;color:var(--navy);
+  }
+  .meta{
+    margin-top:44px;display:grid;gap:1px;background:var(--line);
+    grid-template-columns:repeat(4,1fr);border:1px solid var(--line);
+  }
+  .meta div{background:var(--paper);padding:14px 16px}
+  .meta dt{margin:0 0 4px}
+  .meta dd{margin:0;font-size:13.5px;color:var(--ink)}
+
+  /* ---------- seções ---------- */
+  section{margin-top:88px}
+  .sec-head{display:flex;align-items:baseline;gap:18px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+  .sec-head h2{font-size:clamp(22px,3.4vw,30px);letter-spacing:-.02em}
+  .sec-head .tag{white-space:nowrap;color:var(--ink)}
+  .sec-intro{margin-top:22px;margin-bottom:34px}
+
+  /* ---------- etiqueta de evidência (elemento assinatura) ---------- */
+  .exhibit{
+    display:flex;align-items:center;gap:8px;
+    padding:7px 12px 7px 10px;background:var(--ink);color:#fff;
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    border-radius:2px;
+  }
+  .exhibit .hole{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--paper);flex:0 0 auto;
+  }
+  .exhibit .n{color:#fff}
+  .exhibit .sep{color:#5C6674}
+
+  /* ---------- cards de conceito ---------- */
+  .grid8{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--white);padding:22px 20px 24px;display:flex;flex-direction:column;gap:16px}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .plate{
+    position:relative;height:132px;display:grid;place-items:center;
+    background:
+      linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/100% 22px,
+      linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/22px 100%;
+  }
+  .sym{width:82px;height:82px;color:var(--navy);display:block}
+  .card h3{font-size:16px;letter-spacing:-.01em}
+  .card h3 span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:6px;font-weight:400}
+  .card p{font-size:13px;color:var(--graphite);line-height:1.55}
+  .mini{display:flex;align-items:flex-end;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft)}
+  .mini svg{color:var(--graphite)}
+  .s24{width:24px;height:24px}
+  .s16{width:16px;height:16px}
+  .mini .tag{margin-left:auto}
+
+  /* wordmark plate (conceito tipográfico) */
+  .wm-stack{text-align:left;font-family:var(--display);color:var(--navy);line-height:.88}
+  .wm-stack b{display:block;font-size:26px;font-weight:700;letter-spacing:.44em;margin-right:-.44em}
+  .wm-stack b.two{letter-spacing:-.005em;margin-right:0}
+  .wm-stack i{
+    font-style:normal;display:block;font-size:12px;letter-spacing:.3em;
+    color:var(--blue);font-weight:600;margin:3px 0
+  }
+
+  /* ---------- seleção ---------- */
+  .pick{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .pick > div{background:var(--white);padding:24px 22px}
+  .pick .why{font-size:13.5px;color:var(--graphite);margin-top:12px}
+  .pick h3{font-size:17px;margin-top:14px}
+  .cut{margin-top:34px;border:1px solid var(--line);background:var(--white)}
+  .cut h4{font-size:15px;padding:18px 22px 0}
+  .cut ul{margin:12px 0 0;padding:0 22px 22px;list-style:none;display:grid;gap:10px}
+  .cut li{font-size:13.5px;color:var(--graphite);padding-left:78px;position:relative;border-top:1px solid var(--line-soft);padding-top:11px}
+  .cut li b{
+    position:absolute;left:0;top:11px;font-family:var(--mono);font-size:10px;
+    letter-spacing:.12em;color:var(--gray);font-weight:400
+  }
+
+  /* ---------- refinamento ---------- */
+  .ref{border:1px solid var(--line);background:var(--white);margin-top:1px}
+  .ref + .ref{margin-top:28px}
+  .ref-head{display:flex;gap:16px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line)}
+  .ref-head h3{font-size:19px}
+  .ref-head .tag{margin-left:auto;text-align:right}
+  .ref-body{display:grid;grid-template-columns:1.05fr 1.35fr;gap:1px;background:var(--line)}
+  .ref-cell{background:var(--white);padding:26px 24px}
+  .constr{
+    display:grid;place-items:center;padding:22px;
+    background:
+      linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/100% 16px,
+      linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/16px 100%;
+  }
+  .constr .sym{width:150px;height:150px}
+  .lock{display:flex;align-items:center;gap:18px}
+  .lock .sym{width:56px;height:56px;flex:0 0 auto}
+  .lock-div{width:1px;align-self:stretch;background:var(--line)}
+  .wm{font-family:var(--display);color:var(--navy);line-height:1}
+  .wm .n1{display:block;font-size:23px;font-weight:700;letter-spacing:-.015em}
+  .wm .n2{display:block;font-family:var(--body);font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-top:7px}
+  .lock-v{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .lock-v .sym{width:62px;height:62px}
+  .stack-row{display:flex;gap:34px;flex-wrap:wrap;align-items:center}
+  .subtag{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);display:block;margin-bottom:12px}
+  .spec{display:grid;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line-soft)}
+  .spec div{display:grid;grid-template-columns:104px 1fr;gap:14px;font-size:13px;color:var(--graphite)}
+  .spec dt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);padding-top:2px}
+  .scale{display:flex;align-items:flex-end;gap:20px;margin-top:6px}
+  .scale span{display:block}
+  .s40{width:40px;height:40px}
+  .mono-sym{color:var(--ink);--blue:currentColor}
+
+  /* ---------- aplicações ---------- */
+  .apps{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .app{border:1px solid var(--line);background:var(--white);overflow:hidden}
+  .app > figcaption{
+    display:flex;gap:10px;align-items:center;padding:12px 16px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray)
+  }
+  .app .stagew{padding:40px 26px;display:grid;place-items:center;background:var(--white)}
+  .app .staged{padding:40px 26px;display:grid;place-items:center;background:var(--ink)}
+  .app .staged .wm{color:#fff}
+  .app .staged .wm .n2{color:#8E97A5}
+  .app .staged .sym{color:#fff}
+  .app .stagegr{padding:40px 26px;display:grid;place-items:center;background:var(--graphite)}
+  .app .stagegr .wm{color:#fff}
+  .app .stagegr .wm .n2{color:#B6BCC5}
+  .app .stagegr .sym{color:#fff}
+  .full{grid-column:1/-1}
+
+  /* slide acadêmico */
+  .slide{aspect-ratio:16/9;background:var(--white);padding:34px 38px;display:flex;flex-direction:column;position:relative}
+  .slide .top{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .slide .top .sym{width:30px;height:30px}
+  .slide .top .nm{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--navy)}
+  .slide .top .rt{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+  .slide .mid{margin-top:auto;margin-bottom:auto;padding:22px 0}
+  .slide .mid .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+  .slide .mid h4{font-size:clamp(20px,3vw,30px);letter-spacing:-.02em;margin-top:10px;max-width:24ch;line-height:1.12}
+  .slide .mid p{margin-top:12px;font-size:13.5px;color:var(--graphite);max-width:50ch}
+  .slide .bot{display:flex;padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+  .slide .bot span:last-child{margin-left:auto}
+
+  /* capa de trabalho */
+  .cover-a4{aspect-ratio:1/1.294;background:var(--ink);color:#fff;padding:38px 34px;display:flex;flex-direction:column}
+  .cover-a4 .sym{width:52px;height:52px;color:#fff}
+  .cover-a4 .t{margin-top:auto;font-family:var(--display);font-size:clamp(20px,3.4vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+  .cover-a4 .d{margin-top:14px;font-size:12.5px;color:#9AA3B1;max-width:34ch}
+  .cover-a4 .ln{height:1px;background:#26303F;margin:22px 0 14px}
+  .cover-a4 .f{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:#7E8794;display:flex;flex-wrap:wrap;gap:6px 18px}
+
+  /* documento institucional */
+  .doc{background:#fff;padding:0}
+  .doc .dh{display:flex;align-items:center;gap:12px;padding:20px 26px 14px;border-bottom:2px solid var(--navy)}
+  .doc .dh .sym{width:32px;height:32px}
+  .doc .dh .nm{font-family:var(--display);font-weight:700;font-size:14px;color:var(--navy);letter-spacing:-.01em}
+  .doc .dh .nm small{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;color:var(--gray);font-weight:400;margin-top:3px;text-transform:uppercase}
+  .doc .dh .cod{margin-left:auto;font-family:var(--mono);font-size:9.5px;color:var(--gray);text-align:right;letter-spacing:.1em}
+  .doc .db{padding:22px 26px 8px}
+  .doc .db h5{font-family:var(--display);font-size:13px;margin:0 0 12px;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
+  .doc .db .fields{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);grid-template-columns:1fr 1fr}
+  .doc .db .fields div{background:#fff;padding:10px 12px}
+  .doc .db .fields dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:4px}
+  .doc .db .fields dd{margin:0;font-size:12.5px}
+  .doc .skel{margin:18px 0 0;display:grid;gap:8px}
+  .doc .skel i{display:block;height:6px;background:var(--line-soft);border-radius:1px}
+  .doc .df{margin-top:20px;padding:12px 26px;border-top:1px solid var(--line);font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);display:flex}
+  .doc .df span:last-child{margin-left:auto}
+
+  /* camiseta / material de laboratório */
+  .merch{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+  .tee{background:var(--navy);display:grid;place-items:center;padding:44px 20px}
+  .tee .sym{width:44px;height:44px;color:#fff}
+  .tee .lbl{margin-top:16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.28em;color:#A9B7CE;text-transform:uppercase;text-align:center}
+  .badge{background:var(--paper);display:grid;place-items:center;padding:30px 20px}
+  .badge .tagcard{background:#fff;border:1px solid var(--line);border-radius:2px;padding:16px;width:100%;max-width:220px}
+  .badge .tagcard .row1{display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .badge .tagcard .row1 .sym{width:22px;height:22px}
+  .badge .tagcard .row1 b{font-family:var(--display);font-size:12px;color:var(--navy)}
+  .badge .tagcard .rows{margin-top:10px;display:grid;gap:7px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--gray);text-transform:uppercase}
+  .badge .tagcard .rows span{display:flex;justify-content:space-between;gap:10px}
+  .badge .tagcard .rows span i{font-style:normal;color:var(--ink)}
+  .barcode{display:flex;gap:2px;align-items:flex-end;height:26px;margin-top:12px}
+  .barcode i{display:block;width:2px;background:var(--ink)}
+
+  /* ---------- normas ---------- */
+  .norms{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .norms > div{background:var(--white);padding:24px 22px}
+  .norms h4{font-size:15px;margin-bottom:14px}
+  .norms ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:13px;color:var(--graphite)}
+  .swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+  .sw{border:1px solid var(--line)}
+  .sw i{display:block;height:46px}
+  .sw span{display:block;padding:8px 9px;font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;color:var(--gray);line-height:1.5}
+  .sw span b{display:block;color:var(--ink);font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+  .clear{position:relative;border:1px solid var(--line);padding:26px;display:grid;place-items:center;background:
+      linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/100% 14px,
+      linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/14px 100%;}
+  .clear .box{border:1px dashed var(--blue);padding:22px}
+  .clear .sym{width:56px;height:56px}
+  .dont{display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin-top:16px}
+  .dont figure{margin:0;text-align:center;width:82px}
+  .dont figcaption{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#B03A3A;margin-top:8px;line-height:1.5}
+  .dont .sym{width:52px;height:52px;margin:0 auto}
+  .sq{transform:scaleX(.72)}
+  .rot{transform:rotate(14deg)}
+  .lowc{color:#C4C9D1}
+
+  /* ---------- downloads ---------- */
+  .dl{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+  .dl > div{background:var(--white);padding:22px}
+  .dl .head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line-soft);margin-bottom:16px}
+  .dl .head .sym{width:38px;height:38px;flex:0 0 auto}
+  .dl .head b{font-family:var(--display);font-size:15px;display:block}
+  .dl .head small{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+  .btns{display:flex;flex-wrap:wrap;gap:8px}
+  button{
+    font-family:var(--body);font-size:12.5px;font-weight:500;color:var(--ink);
+    background:var(--white);border:1px solid var(--line);border-radius:2px;
+    padding:9px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+    transition:border-color .15s,background .15s;
+  }
+  button:hover{border-color:var(--navy);background:#F7F8FA}
+  button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  button i{display:block;width:10px;height:10px;border-radius:2px;flex:0 0 auto;border:1px solid rgba(0,0,0,.12)}
+  .btns.wide{margin-top:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chips button{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 11px;color:var(--graphite)}
+  .dl-note{margin-top:22px;padding:16px 18px;border:1px solid var(--line);background:var(--white);font-size:13px;color:var(--graphite)}
+  .dl-note strong{color:var(--ink)}
+  #toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);
+    background:var(--ink);color:#fff;padding:11px 18px;border-radius:3px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;max-width:90vw;text-align:center;
+  }
+  #toast.on{opacity:1;transform:translate(-50%,0)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  @media print{
+    body{background:#fff}
+    .wrap{max-width:none;padding:0}
+    #downloads,#toast{display:none}
+    section{margin-top:34px;break-inside:avoid}
+    .app,.ref,.card{break-inside:avoid}
+    .cover{padding-top:0}
+  }
+
+  footer{margin-top:80px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:18px;flex-wrap:wrap}
+  footer .tag{color:var(--gray)}
+  footer .tag:last-child{margin-left:auto}
+
+  @media (max-width:1000px){
+    .grid8{grid-template-columns:repeat(2,1fr)}
+    .ref-body{grid-template-columns:1fr}
+    .pick,.norms,.dl{grid-template-columns:1fr}
+    .meta{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 16px 72px}
+    .grid8{grid-template-columns:1fr}
+    .apps{grid-template-columns:1fr}
+    .merch{grid-template-columns:1fr}
+    .swatches{grid-template-columns:repeat(2,1fr)}
+    .sec-head{flex-direction:column;gap:8px;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SPRITE DE SÍMBOLOS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- EX-01 · Selo de Custódia -->
+  <symbol id="ex1" viewBox="0 0 96 96">
+    <path d="M20 21.5 H63 L74.5 33 V74.5 H20 Z" fill="none" stroke="currentColor" stroke-width="7"/>
+    <rect x="32" y="41" width="32" height="6" fill="currentColor"/>
+    <rect x="32" y="52" width="21" height="6" fill="currentColor"/>
+    <rect x="32" y="63" width="11" height="6" fill="var(--blue)" class="a"/>
+  </symbol>
+
+  <!-- EX-02 · Monograma L+O -->
+  <symbol id="ex2" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="28" fill="none" stroke="currentColor" stroke-width="7" opacity=".38"/>
+    <path d="M38 30 V66 H62" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square"/>
+  </symbol>
+
+  <!-- EX-03 · L graduado (escala forense) -->
+  <symbol id="ex3" viewBox="0 0 96 96">
+    <rect x="22" y="22" width="10" height="52" fill="currentColor"/>
+    <rect x="22" y="64" width="52" height="10" fill="currentColor"/>
+    <rect x="40" y="52" width="6" height="12" fill="currentColor"/>
+    <rect x="52" y="44" width="6" height="20" fill="currentColor"/>
+    <rect x="64" y="36" width="6" height="28" fill="currentColor"/>
+  </symbol>
+
+  <!-- EX-03R · versão refinada: anomalia destacada -->
+  <symbol id="ex3r" viewBox="0 0 96 96">
+    <rect x="21" y="20" width="11" height="54" fill="currentColor"/>
+    <rect x="21" y="63" width="53" height="11" fill="currentColor"/>
+    <rect x="40" y="51" width="6" height="12" fill="currentColor"/>
+    <rect x="52" y="43" width="6" height="20" fill="currentColor"/>
+    <rect x="64" y="27" width="6" height="36" fill="var(--blue)" class="a"/>
+  </symbol>
+
+  <!-- EX-04 · Estratos com canal de extração -->
+  <symbol id="ex4" viewBox="0 0 96 96">
+    <rect x="20" y="28" width="22" height="10" fill="currentColor"/>
+    <rect x="54" y="28" width="22" height="10" fill="currentColor"/>
+    <rect x="20" y="44" width="22" height="10" fill="currentColor"/>
+    <rect x="54" y="44" width="22" height="10" fill="currentColor"/>
+    <rect x="20" y="60" width="22" height="10" fill="currentColor"/>
+    <rect x="54" y="60" width="22" height="10" fill="currentColor"/>
+    <rect x="45" y="20" width="6" height="58" fill="var(--blue)" class="a"/>
+  </symbol>
+
+  <!-- EX-05 · Matriz de análise -->
+  <symbol id="ex5" viewBox="0 0 96 96">
+    <g fill="none" stroke="currentColor" stroke-width="4">
+      <rect x="24" y="24" width="14" height="14"/><rect x="44" y="24" width="14" height="14"/><rect x="64" y="24" width="14" height="14"/>
+      <rect x="24" y="44" width="14" height="14"/><rect x="44" y="44" width="14" height="14"/>
+      <rect x="24" y="64" width="14" height="14"/><rect x="44" y="64" width="14" height="14"/><rect x="64" y="64" width="14" height="14"/>
+    </g>
+    <rect x="64" y="44" width="14" height="14" fill="var(--blue)" class="a"/>
+  </symbol>
+
+  <!-- EX-07 · Lâmina de análise -->
+  <symbol id="ex7" viewBox="0 0 96 96">
+    <rect x="32.5" y="18.5" width="31" height="59" rx="3" fill="none" stroke="currentColor" stroke-width="6"/>
+    <rect x="41" y="31" width="14" height="14" fill="var(--blue)" class="a"/>
+    <rect x="41" y="55" width="14" height="5" fill="currentColor"/>
+    <rect x="41" y="64" width="9" height="5" fill="currentColor"/>
+  </symbol>
+
+  <!-- EX-08 · Cadeia entre delimitadores -->
+  <symbol id="ex8" viewBox="0 0 96 96">
+    <path d="M35 22 H24.5 V74 H35" fill="none" stroke="currentColor" stroke-width="7"/>
+    <path d="M61 22 H71.5 V74 H61" fill="none" stroke="currentColor" stroke-width="7"/>
+    <rect x="46.5" y="32" width="3" height="32" fill="currentColor"/>
+    <circle cx="48" cy="32" r="5.5" fill="currentColor"/>
+    <circle cx="48" cy="48" r="5.5" fill="var(--blue)" class="a"/>
+    <circle cx="48" cy="64" r="5.5" fill="currentColor"/>
+  </symbol>
+
+  <!-- EX-01R · selo refinado (proporção corrigida) -->
+  <symbol id="ex1r" viewBox="0 0 96 96">
+    <path d="M19 20.5 H62 L75.5 34 V75.5 H19 Z" fill="none" stroke="currentColor" stroke-width="7.5"/>
+    <rect x="31" y="42" width="34" height="6.5" fill="currentColor"/>
+    <rect x="31" y="53.5" width="22" height="6.5" fill="currentColor"/>
+    <rect x="31" y="65" width="11" height="6.5" fill="var(--blue)" class="a"/>
+  </symbol>
+
+  <!-- EX-08R · cadeia refinada -->
+  <symbol id="ex8r" viewBox="0 0 96 96">
+    <path d="M34 21 H23 V75 H34" fill="none" stroke="currentColor" stroke-width="7.5"/>
+    <path d="M62 21 H73 V75 H62" fill="none" stroke="currentColor" stroke-width="7.5"/>
+    <rect x="46.25" y="31" width="3.5" height="34" fill="currentColor"/>
+    <circle cx="48" cy="31" r="6" fill="currentColor"/>
+    <circle cx="48" cy="48" r="6" fill="var(--blue)" class="a"/>
+    <circle cx="48" cy="65" r="6" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+
+  <!-- ============ CAPA ============ -->
+  <header class="cover">
+    <div class="kicker">
+      <span class="exhibit"><i class="hole"></i><span class="n">Dossiê de marca</span></span>
+      <span class="tag">Identidade visual · v1.0</span>
+    </div>
+    <h1>Lab<em>&amp;</em>Order</h1>
+    <p class="sub">Núcleo de Perícia Computacional e Forense Digital</p>
+    <dl class="meta">
+      <div><dt class="tag">Projeto</dt><dd>Trabalho acadêmico — ADS</dd></div>
+      <div><dt class="tag">Responsável</dt><dd>Eduardo</dd></div>
+      <div><dt class="tag">Escopo</dt><dd>Símbolo, assinatura, paleta, aplicações</dd></div>
+      <div><dt class="tag">Peças</dt><dd>8 conceitos · 3 refinados</dd></div>
+    </dl>
+    <p class="lead" style="margin-top:34px">
+      Toda perícia começa com a mesma pergunta: o que estava fora de ordem? Esta identidade
+      trabalha essa ideia — <strong>ordem estabelecida</strong> e <strong>o elemento que
+      escapa dela</strong> — em construção geométrica sobre grade, sem efeito, sem gradiente
+      e sem nenhuma lupa.
+    </p>
+  </header>
+
+  <!-- ============ ETAPA 1 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="tag">Etapa 01 / 04</span>
+      <h2>Exploração — oito conceitos</h2>
+    </div>
+    <p class="sec-intro lead">
+      Oito construções distintas, cada uma com uma leitura diferente de <em>Lab</em> (análise,
+      amostra, evidência) e <em>Order</em> (método, sequência, classificação). Todas desenhadas
+      sobre grade de 4&nbsp;px, em traço único e testadas em 24&nbsp;px e 16&nbsp;px.
+    </p>
+
+    <div class="grid8">
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-01</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex1"/></svg></div>
+        <h3><span>Custódia</span>Selo de Custódia</h3>
+        <p>Etiqueta de evidência com canto chanfrado. As três barras decrescentes são o registro
+          classificado; a menor, em azul, é o item em análise.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex1"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex1"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-02</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex2"/></svg></div>
+        <h3><span>Monograma</span>L dentro do O</h3>
+        <p>O anel é o perímetro do caso; o L é o laboratório operando dentro dele. Duas
+          espessuras, dois pesos de cinza, nenhuma sobreposição de leitura.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex2"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex2"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-03</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex3"/></svg></div>
+        <h3><span>Escala</span>L graduado</h3>
+        <p>Um L cujo braço é uma escala de referência forense — o objeto que aparece ao lado de
+          toda evidência fotografada. Medida, ordem e inicial no mesmo traço.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex3"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex3"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-04</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex4"/></svg></div>
+        <h3><span>Camadas</span>Estratos</h3>
+        <p>Corte transversal de um dispositivo de armazenamento. O canal vertical é a extração
+          atravessando as camadas sem alterá-las.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex4"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex4"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-05</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex5"/></svg></div>
+        <h3><span>Classificação</span>Matriz de análise</h3>
+        <p>Nove posições, oito vazias, uma ocupada. A varredura sistemática que localiza o
+          artefato — o método antes do achado.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex5"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex5"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-06</span></span></div>
+        <div class="plate">
+          <div class="wm-stack"><b>LAB</b><i>&amp;</i><b class="two">ORDER</b></div>
+        </div>
+        <h3><span>Tipográfico</span>Bloco justificado</h3>
+        <p>Sem símbolo. LAB e ORDER calibrados para a mesma largura óptica; o &amp; vira o eixo
+          entre as duas palavras. Solução institucional e barata de reproduzir.</p>
+        <div class="mini">
+          <div class="wm-stack" style="line-height:.9"><b style="font-size:11px">LAB</b><i style="font-size:6px;margin:1px 0">&amp;</i><b class="two" style="font-size:11px">ORDER</b></div>
+          <span class="tag">Teste a 11 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-07</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex7"/></svg></div>
+        <h3><span>Laboratório</span>Lâmina de análise</h3>
+        <p>A lâmina de microscopia como suporte da amostra: área do espécime em azul, campo de
+          anotação abaixo. Referência de bancada, não de ficção.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex7"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex7"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="exhibit"><i class="hole"></i><span class="n">EX-08</span></span></div>
+        <div class="plate"><svg class="sym" viewBox="0 0 96 96"><use href="#ex8"/></svg></div>
+        <h3><span>Cadeia</span>Cadeia entre delimitadores</h3>
+        <p>Três nós encadeados entre colchetes: a cadeia de custódia escrita na sintaxe de quem
+          lê código. Institucional e técnico ao mesmo tempo.</p>
+        <div class="mini">
+          <svg class="s24" viewBox="0 0 96 96"><use href="#ex8"/></svg>
+          <svg class="s16" viewBox="0 0 96 96"><use href="#ex8"/></svg>
+          <span class="tag">24 / 16 px</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ ETAPA 2 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="tag">Etapa 02 / 04</span>
+      <h2>Seleção e autocrítica</h2>
+    </div>
+    <p class="sec-intro lead">
+      Critérios de corte, nesta ordem: o conceito é específico de perícia (e não de tecnologia
+      em geral)?; sobrevive a 16&nbsp;px e ao preto e branco?; um profissional da área
+      reconheceria a referência?
+    </p>
+
+    <div class="pick">
+      <div>
+        <span class="exhibit"><i class="hole"></i><span class="n">EX-03</span><span class="sep">/</span><span class="n">A</span></span>
+        <h3>L graduado</h3>
+        <p class="why">A referência mais específica do conjunto: a escala de medição é objeto
+          obrigatório em documentação de evidência. Forma o L de <em>Lab</em> sem soletrar nada,
+          é a mais legível em tamanho pequeno e a única que ninguém confunde com fintech.</p>
+      </div>
+      <div>
+        <span class="exhibit"><i class="hole"></i><span class="n">EX-01</span><span class="sep">/</span><span class="n">B</span></span>
+        <h3>Selo de Custódia</h3>
+        <p class="why">A mais institucional. O canto chanfrado dá silhueta própria — reconhecível
+          mesmo em silhueta cheia, o que resolve favicon, carimbo e bordado. Aceita número de
+          protocolo no lugar das barras em aplicações especiais.</p>
+      </div>
+      <div>
+        <span class="exhibit"><i class="hole"></i><span class="n">EX-08</span><span class="sep">/</span><span class="n">C</span></span>
+        <h3>Cadeia entre delimitadores</h3>
+        <p class="why">Único conceito que fala de <em>processo</em>, não de objeto: custódia,
+          rastreabilidade, integridade. Vertical por natureza, ocupa bem lombada, banner e
+          crachá onde as outras não caberiam.</p>
+      </div>
+    </div>
+
+    <div class="cut">
+      <h4>Eliminados — e o motivo</h4>
+      <ul>
+        <li><b>EX-05</b> Matriz de análise. Grade com uma célula acesa é o ícone padrão de
+          qualquer painel de dados. Conceito correto, forma sem propriedade.</li>
+        <li><b>EX-07</b> Lâmina de análise. Em 16&nbsp;px vira cartão, celular ou crachá.
+          Falha justamente no teste que mais importa.</li>
+        <li><b>EX-04</b> Estratos. Boa ideia, execução barulhenta: seis retângulos e um canal
+          disputam atenção e o azul central puxa mais peso do que deveria.</li>
+        <li><b>EX-02</b> Monograma L+O. Correto e vazio — depende de dois pesos de cinza para
+          funcionar e desmonta em monocromático de uma cor.</li>
+        <li><b>EX-06</b> Bloco tipográfico. Não descartado: promovido a assinatura oficial das
+          três direções, no lugar de símbolo autônomo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ETAPA 3 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="tag">Etapa 03 / 04</span>
+      <h2>Refinamento das três direções</h2>
+    </div>
+    <p class="sec-intro lead">
+      Ajustes de espessura, compensação óptica nos encontros de traço, travamento na grade e
+      definição das assinaturas horizontal e vertical.
+    </p>
+
+    <!-- DIREÇÃO A -->
+    <div class="ref">
+      <div class="ref-head">
+        <span class="exhibit"><i class="hole"></i><span class="n">Direção A</span></span>
+        <h3>L graduado</h3>
+        <span class="tag">Recomendada como marca principal</span>
+      </div>
+      <div class="ref-body">
+        <div class="ref-cell constr"><svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg></div>
+        <div class="ref-cell">
+          <div class="stack-row">
+            <div>
+              <span class="subtag">Assinatura horizontal</span>
+              <div class="lock">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+                <span class="lock-div"></span>
+                <span class="wm"><span class="n1">Lab&amp;Order</span><span class="n2">Perícia Computacional</span></span>
+              </div>
+            </div>
+            <div>
+              <span class="subtag">Vertical</span>
+              <div class="lock-v">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+                <span class="wm" style="text-align:center"><span class="n1">Lab&amp;Order</span><span class="n2">Forense Digital</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="spec">
+            <div><dt>Refino</dt><dd>Traço principal a 11 u (era 10); a graduação mais alta passa a azul e cresce acima da sequência — a anomalia que a perícia encontra.</dd></div>
+            <div><dt>Prova</dt><dd>
+              <span class="scale">
+                <svg class="s40 mono-sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+                <svg class="s24 mono-sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+                <svg class="s16 mono-sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+              </span>
+            </dd></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIREÇÃO B -->
+    <div class="ref">
+      <div class="ref-head">
+        <span class="exhibit"><i class="hole"></i><span class="n">Direção B</span></span>
+        <h3>Selo de Custódia</h3>
+        <span class="tag">Alternativa institucional</span>
+      </div>
+      <div class="ref-body">
+        <div class="ref-cell constr"><svg class="sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg></div>
+        <div class="ref-cell">
+          <div class="stack-row">
+            <div>
+              <span class="subtag">Assinatura horizontal</span>
+              <div class="lock">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+                <span class="lock-div"></span>
+                <span class="wm"><span class="n1">Lab&amp;Order</span><span class="n2">Núcleo de Forense Digital</span></span>
+              </div>
+            </div>
+            <div>
+              <span class="subtag">Vertical</span>
+              <div class="lock-v">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+                <span class="wm" style="text-align:center"><span class="n1">Lab&amp;Order</span><span class="n2">Est. 2026</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="spec">
+            <div><dt>Refino</dt><dd>Chanfro aumentado para 13,5 u para sobreviver à redução; barras com incremento constante de 11 u e alinhamento à esquerda do campo interno.</dd></div>
+            <div><dt>Prova</dt><dd>
+              <span class="scale">
+                <svg class="s40 mono-sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+                <svg class="s24 mono-sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+                <svg class="s16 mono-sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+              </span>
+            </dd></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIREÇÃO C -->
+    <div class="ref">
+      <div class="ref-head">
+        <span class="exhibit"><i class="hole"></i><span class="n">Direção C</span></span>
+        <h3>Cadeia entre delimitadores</h3>
+        <span class="tag">Alternativa de processo</span>
+      </div>
+      <div class="ref-body">
+        <div class="ref-cell constr"><svg class="sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg></div>
+        <div class="ref-cell">
+          <div class="stack-row">
+            <div>
+              <span class="subtag">Assinatura horizontal</span>
+              <div class="lock">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+                <span class="lock-div"></span>
+                <span class="wm"><span class="n1">Lab&amp;Order</span><span class="n2">Cadeia de Custódia Digital</span></span>
+              </div>
+            </div>
+            <div>
+              <span class="subtag">Vertical</span>
+              <div class="lock-v">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+                <span class="wm" style="text-align:center"><span class="n1">Lab&amp;Order</span><span class="n2">Perícia Computacional</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="spec">
+            <div><dt>Refino</dt><dd>Colchetes abertos 1 u a mais para não fechar em impressão; nós a 6 u de raio e haste a 3,5 u, mantendo contraste entre ponto e linha.</dd></div>
+            <div><dt>Prova</dt><dd>
+              <span class="scale">
+                <svg class="s40 mono-sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+                <svg class="s24 mono-sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+                <svg class="s16 mono-sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+              </span>
+            </dd></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ETAPA 4 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="tag">Etapa 04 / 04</span>
+      <h2>Aplicações</h2>
+    </div>
+    <p class="sec-intro lead">
+      Direção A aplicada nos suportes que o projeto realmente vai usar. As direções B e C
+      aparecem nos testes monocromáticos e no material de laboratório.
+    </p>
+
+    <div class="apps">
+
+      <figure class="app" style="margin:0">
+        <div class="stagew">
+          <div class="lock">
+            <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+            <span class="lock-div"></span>
+            <span class="wm"><span class="n1">Lab&amp;Order</span><span class="n2">Perícia Computacional</span></span>
+          </div>
+        </div>
+        <figcaption><i class="hole" style="width:6px;height:6px;border-radius:50%;background:var(--line);display:block"></i>Positiva · fundo branco</figcaption>
+      </figure>
+
+      <figure class="app" style="margin:0">
+        <div class="staged">
+          <div class="lock">
+            <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+            <span class="lock-div" style="background:#2A3444"></span>
+            <span class="wm"><span class="n1">Lab&amp;Order</span><span class="n2">Perícia Computacional</span></span>
+          </div>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--ink);display:block"></i>Negativa · fundo preto</figcaption>
+      </figure>
+
+      <figure class="app" style="margin:0">
+        <div class="stagegr">
+          <div class="lock">
+            <svg class="sym mono-sym" style="color:#fff" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+            <span class="lock-div" style="background:#4A535F"></span>
+            <span class="wm"><span class="n1">Lab&amp;Order</span><span class="n2">Perícia Computacional</span></span>
+          </div>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--graphite);display:block"></i>Monocromática · grafite (uma cor)</figcaption>
+      </figure>
+
+      <figure class="app" style="margin:0">
+        <div class="stagew" style="gap:26px;display:flex;flex-wrap:wrap;justify-content:center">
+          <svg class="s40 mono-sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+          <svg class="s40 mono-sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+          <svg class="s40 mono-sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--ink);display:block"></i>A · B · C em preto puro, sem acento</figcaption>
+      </figure>
+
+      <figure class="app full" style="margin:0">
+        <div class="slide">
+          <div class="top">
+            <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+            <span class="nm">Lab&amp;Order</span>
+            <span class="rt">Slide 04 · Metodologia</span>
+          </div>
+          <div class="mid">
+            <span class="eyebrow">Aquisição de evidência</span>
+            <h4>Da imagem forense ao laudo, sem quebra de custódia</h4>
+            <p>Cada etapa gera hash, registro de horário e responsável. O que não pode ser
+              verificado por terceiros não entra no relatório.</p>
+          </div>
+          <div class="bot"><span>UNICEPLAC · Análise e Desenvolvimento de Sistemas</span><span>04 / 18</span></div>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--line);display:block"></i>Slide de apresentação acadêmica · 16:9</figcaption>
+      </figure>
+
+      <figure class="app" style="margin:0">
+        <div class="cover-a4">
+          <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+          <div class="t">Perícia Computacional aplicada à análise de evidências digitais</div>
+          <div class="d">Estudo de caso: aquisição, preservação e exame de mídia de armazenamento.</div>
+          <div class="ln"></div>
+          <div class="f"><span>Lab&amp;Order</span><span>2º semestre / 2026</span><span>Eduardo</span></div>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--ink);display:block"></i>Capa de trabalho · A4</figcaption>
+      </figure>
+
+      <figure class="app" style="margin:0">
+        <div class="doc">
+          <div class="dh">
+            <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+            <span class="nm">Lab&amp;Order<small>Perícia Computacional</small></span>
+            <span class="cod">LO-2026-0147<br>fl. 1 de 12</span>
+          </div>
+          <div class="db">
+            <h5>Termo de recebimento de material</h5>
+            <dl class="fields">
+              <div><dt>Item</dt><dd>SSD SATA 480 GB</dd></div>
+              <div><dt>Lacre</dt><dd>0147-A</dd></div>
+              <div><dt>Hash SHA-256</dt><dd>a3f9…c41d</dd></div>
+              <div><dt>Recebido em</dt><dd>11/08/2026 · 14:20</dd></div>
+            </dl>
+            <div class="skel"><i></i><i style="width:92%"></i><i style="width:74%"></i></div>
+          </div>
+          <div class="df"><span>Documento controlado</span><span>Assinatura do responsável</span></div>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--line);display:block"></i>Documento institucional · papelaria</figcaption>
+      </figure>
+
+      <figure class="app full" style="margin:0">
+        <div class="merch">
+          <div class="tee">
+            <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+            <div class="lbl">Lab&amp;Order — Forense Digital</div>
+          </div>
+          <div class="badge">
+            <div class="tagcard">
+              <div class="row1">
+                <svg class="sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+                <b>Lab&amp;Order</b>
+              </div>
+              <div class="rows">
+                <span>Evidência <i>EX-0147</i></span>
+                <span>Coleta <i>11.08.26</i></span>
+                <span>Responsável <i>E. R.</i></span>
+              </div>
+              <div class="barcode">
+                <i style="height:26px"></i><i style="height:18px"></i><i style="height:26px"></i><i style="height:12px"></i>
+                <i style="height:26px"></i><i style="height:22px"></i><i style="height:14px"></i><i style="height:26px"></i>
+                <i style="height:18px"></i><i style="height:26px"></i><i style="height:12px"></i><i style="height:22px"></i>
+                <i style="height:26px"></i><i style="height:16px"></i><i style="height:26px"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption><i style="width:6px;height:6px;border-radius:50%;background:var(--navy);display:block"></i>Camiseta (bordado 1 cor) e etiqueta de evidência do laboratório</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ============ NORMAS ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="tag">Anexo</span>
+      <h2>Especificações e uso</h2>
+    </div>
+    <div class="norms" style="margin-top:34px">
+      <div>
+        <h4>Paleta</h4>
+        <div class="swatches">
+          <div class="sw"><i style="background:#0A0F1A"></i><span><b>Tinta</b>#0A0F1A</span></div>
+          <div class="sw"><i style="background:#132C52"></i><span><b>Marinho</b>#132C52</span></div>
+          <div class="sw"><i style="background:#333B45"></i><span><b>Grafite</b>#333B45</span></div>
+          <div class="sw"><i style="background:#79828F"></i><span><b>Cinza</b>#79828F</span></div>
+          <div class="sw"><i style="background:#F2F3F5"></i><span><b>Papel</b>#F2F3F5</span></div>
+          <div class="sw"><i style="background:#2C6BD8"></i><span><b>Azul téc.</b>#2C6BD8</span></div>
+        </div>
+        <p class="note" style="margin-top:14px">O azul técnico é acento, não cor de marca:
+          no máximo um elemento por peça, nunca em área grande, nunca em fundo.</p>
+      </div>
+      <div>
+        <h4>Tipografia e área de respiro</h4>
+        <div class="spec" style="margin-top:0;padding-top:0;border:0">
+          <div><dt>Assinatura</dt><dd>Archivo Bold — tracking −1,5%</dd></div>
+          <div><dt>Descritor</dt><dd>Inter Medium — caixa alta, tracking 20%</dd></div>
+          <div><dt>Dados</dt><dd>IBM Plex Mono — códigos, hashes, protocolos</dd></div>
+          <div><dt>Substitutas</dt><dd>Helvetica / Arial e Courier New</dd></div>
+        </div>
+        <div class="clear" style="margin-top:16px">
+          <div class="box"><svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg></div>
+        </div>
+        <p class="note" style="margin-top:10px">Respiro mínimo: altura do braço horizontal do
+          símbolo em todos os lados. Tamanho mínimo: 14&nbsp;px em tela, 8&nbsp;mm impresso.</p>
+      </div>
+      <div>
+        <h4>Usos proibidos</h4>
+        <div class="dont">
+          <figure><svg class="sym sq" viewBox="0 0 96 96"><use href="#ex3r"/></svg><figcaption>Não distorcer</figcaption></figure>
+          <figure><svg class="sym rot" viewBox="0 0 96 96"><use href="#ex3r"/></svg><figcaption>Não rotacionar</figcaption></figure>
+          <figure><svg class="sym lowc" viewBox="0 0 96 96"><use href="#ex3r"/></svg><figcaption>Sem contraste</figcaption></figure>
+        </div>
+        <ul style="margin-top:18px">
+          <li>Não aplicar sombra, brilho, contorno ou gradiente.</li>
+          <li>Não recolorir o acento para fora da paleta.</li>
+          <li>Não separar símbolo e assinatura na mesma peça.</li>
+          <li>Não recompor a grafia: sempre <strong>Lab&amp;Order</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOADS ============ -->
+  <section id="downloads">
+    <div class="sec-head">
+      <span class="tag">Arquivos</span>
+      <h2>Baixar em SVG</h2>
+    </div>
+    <p class="sec-intro lead">
+      Vetor puro, 512&nbsp;×&nbsp;512, sem dependência de fonte — abre no Illustrator, Figma,
+      Inkscape, PowerPoint e Word. Se o download travar (comum no navegador do celular), use
+      <strong>Copiar código</strong> e cole em um arquivo <code>.svg</code>.
+    </p>
+
+    <div class="dl">
+      <div>
+        <div class="head">
+          <svg class="sym" viewBox="0 0 96 96"><use href="#ex3r"/></svg>
+          <span><b>Direção A</b><small>L graduado</small></span>
+        </div>
+        <div class="btns">
+          <button type="button" data-sym="ex3r" data-name="labandorder-A-l-graduado" data-variant="navy"><i style="background:#132C52"></i>Marinho + azul</button>
+          <button type="button" data-sym="ex3r" data-name="labandorder-A-l-graduado" data-variant="ink"><i style="background:#0A0F1A"></i>Preto 1 cor</button>
+          <button type="button" data-sym="ex3r" data-name="labandorder-A-l-graduado" data-variant="white"><i style="background:#fff"></i>Branco 1 cor</button>
+          <button type="button" data-sym="ex3r" data-name="labandorder-A-l-graduado" data-variant="navy" data-copy="1">Copiar código</button>
+        </div>
+      </div>
+      <div>
+        <div class="head">
+          <svg class="sym" viewBox="0 0 96 96"><use href="#ex1r"/></svg>
+          <span><b>Direção B</b><small>Selo de custódia</small></span>
+        </div>
+        <div class="btns">
+          <button type="button" data-sym="ex1r" data-name="labandorder-B-selo-custodia" data-variant="navy"><i style="background:#132C52"></i>Marinho + azul</button>
+          <button type="button" data-sym="ex1r" data-name="labandorder-B-selo-custodia" data-variant="ink"><i style="background:#0A0F1A"></i>Preto 1 cor</button>
+          <button type="button" data-sym="ex1r" data-name="labandorder-B-selo-custodia" data-variant="white"><i style="background:#fff"></i>Branco 1 cor</button>
+          <button type="button" data-sym="ex1r" data-name="labandorder-B-selo-custodia" data-variant="navy" data-copy="1">Copiar código</button>
+        </div>
+      </div>
+      <div>
+        <div class="head">
+          <svg class="sym" viewBox="0 0 96 96"><use href="#ex8r"/></svg>
+          <span><b>Direção C</b><small>Cadeia entre delimitadores</small></span>
+        </div>
+        <div class="btns">
+          <button type="button" data-sym="ex8r" data-name="labandorder-C-cadeia" data-variant="navy"><i style="background:#132C52"></i>Marinho + azul</button>
+          <button type="button" data-sym="ex8r" data-name="labandorder-C-cadeia" data-variant="ink"><i style="background:#0A0F1A"></i>Preto 1 cor</button>
+          <button type="button" data-sym="ex8r" data-name="labandorder-C-cadeia" data-variant="white"><i style="background:#fff"></i>Branco 1 cor</button>
+          <button type="button" data-sym="ex8r" data-name="labandorder-C-cadeia" data-variant="navy" data-copy="1">Copiar código</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-note">
+      <strong>Assinatura completa (símbolo + nome), direção A.</strong> O nome sai como texto
+      vivo em Archivo, com Arial/Helvetica de reserva. Se a Archivo não estiver instalada na
+      máquina, o SVG abre com a reserva — no editor, use <em>Converter em curvas / Outline</em>
+      antes de fechar o arquivo final.
+      <div class="btns wide">
+        <button type="button" id="dlLockH">Assinatura horizontal · SVG</button>
+        <button type="button" id="dlLockV">Assinatura vertical · SVG</button>
+        <button type="button" id="dlPage">Salvar esta página (.html)</button>
+        <button type="button" id="doPrint">Imprimir / salvar em PDF</button>
+      </div>
+    </div>
+
+    <p class="subtag" style="margin-top:26px">Conceitos da exploração — versão marinho</p>
+    <div class="chips">
+      <button type="button" data-sym="ex1" data-name="labandorder-EX01-selo" data-variant="navy">EX-01 Selo</button>
+      <button type="button" data-sym="ex2" data-name="labandorder-EX02-monograma" data-variant="navy">EX-02 Monograma</button>
+      <button type="button" data-sym="ex3" data-name="labandorder-EX03-escala" data-variant="navy">EX-03 Escala</button>
+      <button type="button" data-sym="ex4" data-name="labandorder-EX04-estratos" data-variant="navy">EX-04 Estratos</button>
+      <button type="button" data-sym="ex5" data-name="labandorder-EX05-matriz" data-variant="navy">EX-05 Matriz</button>
+      <button type="button" data-sym="ex7" data-name="labandorder-EX07-lamina" data-variant="navy">EX-07 Lâmina</button>
+      <button type="button" data-sym="ex8" data-name="labandorder-EX08-cadeia" data-variant="navy">EX-08 Cadeia</button>
+    </div>
+  </section>
+
+  <footer>
+    <span class="tag">Lab&amp;Order · Dossiê de identidade visual</span>
+    <span class="tag">8 conceitos · 3 direções · 1 recomendação</span>
+    <span class="tag">v1.0 — 11.08.2026</span>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var HEX = {
+    navy:  { main:'#132C52', accent:'#2C6BD8' },
+    ink:   { main:'#0A0F1A', accent:'#0A0F1A' },
+    white: { main:'#FFFFFF', accent:'#FFFFFF' }
+  };
+
+  function toast(msg){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('on');
+    clearTimeout(t._h); t._h = setTimeout(function(){ t.classList.remove('on'); }, 2600);
+  }
+
+  function symbolSVG(id, variant, size){
+    var v = HEX[variant] || HEX.navy;
+    var node = document.getElementById(id);
+    var inner = node.innerHTML
+      .replace(/var\(--blue\)/g, v.accent)
+      .replace(/currentColor/g, v.main)
+      .replace(/\sclass="a"/g, '');
+    size = size || 512;
+    return '<?xml version="1.0" encoding="UTF-8"?>\n' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="' + size +
+      '" height="' + size + '" role="img" aria-label="Lab&amp;Order">\n' +
+      '<title>Lab&amp;Order</title>\n' + inner.trim() + '\n</svg>\n';
+  }
+
+  function lockupSVG(orientation){
+    var main = '#132C52', accent = '#2C6BD8', gray = '#79828F';
+    var inner = document.getElementById('ex3r').innerHTML
+      .replace(/var\(--blue\)/g, accent)
+      .replace(/currentColor/g, main)
+      .replace(/\sclass="a"/g, '')
+      .trim();
+    var face = "Archivo, 'Helvetica Neue', Arial, sans-serif";
+    var body = "Inter, Arial, sans-serif";
+    var head = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    var title = '<title>Lab&amp;Order</title>\n';
+
+    if (orientation === 'v') {
+      return head +
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="840" height="600" role="img" aria-label="Lab&amp;Order">\n' + title +
+        '<g transform="translate(162 26) scale(1.0)">' + inner + '</g>\n' +
+        '<text x="210" y="230" text-anchor="middle" font-family="' + face + '" font-weight="700" font-size="52" letter-spacing="-0.8" fill="' + main + '">Lab&amp;Order</text>\n' +
+        '<text x="210" y="258" text-anchor="middle" font-family="' + body + '" font-weight="500" font-size="15" letter-spacing="3" fill="' + gray + '">PERÍCIA COMPUTACIONAL</text>\n' +
+        '</svg>\n';
+    }
+    return head +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 160" width="1240" height="320" role="img" aria-label="Lab&amp;Order">\n' + title +
+      '<g transform="translate(24 32)">' + inner + '</g>\n' +
+      '<rect x="150" y="34" width="1.5" height="92" fill="#D9DCE2"/>\n' +
+      '<text x="182" y="82" font-family="' + face + '" font-weight="700" font-size="48" letter-spacing="-0.7" fill="' + main + '">Lab&amp;Order</text>\n' +
+      '<text x="184" y="110" font-family="' + body + '" font-weight="500" font-size="14" letter-spacing="2.8" fill="' + gray + '">PERÍCIA COMPUTACIONAL</text>\n' +
+      '</svg>\n';
+  }
+
+  function saveBlob(text, filename, mime){
+    try{
+      var blob = new Blob([text], { type: mime || 'image/svg+xml;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = filename; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+      toast('Baixado: ' + filename);
+    } catch(e){
+      toast('Download bloqueado — use Copiar código');
+    }
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function(){ toast('Código SVG copiado'); },
+        function(){ fallbackCopy(text); }
+      );
+    } else { fallbackCopy(text); }
+  }
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta);
+    ta.select(); ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e){ ok = false; }
+    ta.remove();
+    toast(ok ? 'Código SVG copiado' : 'Não foi possível copiar');
+  }
+
+  document.querySelectorAll('button[data-sym]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var svg = symbolSVG(btn.dataset.sym, btn.dataset.variant);
+      if (btn.dataset.copy) { copyText(svg); }
+      else { saveBlob(svg, btn.dataset.name + '-' + btn.dataset.variant + '.svg'); }
+    });
+  });
+
+  document.getElementById('dlLockH').addEventListener('click', function(){
+    saveBlob(lockupSVG('h'), 'labandorder-assinatura-horizontal.svg');
+  });
+  document.getElementById('dlLockV').addEventListener('click', function(){
+    saveBlob(lockupSVG('v'), 'labandorder-assinatura-vertical.svg');
+  });
+  document.getElementById('dlPage').addEventListener('click', function(){
+    saveBlob('<!DOCTYPE html>\n' + document.documentElement.outerHTML,
+             'lab-and-order-identidade.html', 'text/html;charset=utf-8');
+  });
+  document.getElementById('doPrint').addEventListener('click', function(){ window.print(); });
+})();
+</script>
+</body>
+</html>
