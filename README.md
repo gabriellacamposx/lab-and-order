@@ -1,8 +1,8 @@
 # Lab&Order
 
-Equipe do Projeto Integrador de Perícia Computacional — Análise e Desenvolvimento de Sistemas, UNICEPLAC, 2º semestre de 2026.
+Equipe do Projeto Integrador de Perícia Computacional — Análise e Desenvolvimento de Sistemas, UNICEPLAC, 5º semestre de 2026.
 
-<img src="docs/identidade/labandorder-A-l-graduado-navy.svg" width="72" alt="Lab&Order">
+<img src="docs/identidade/labandorder-assinatura-horizontal.svg" width="72" alt="Lab&Order">
 
 ## Sobre o projeto
 
@@ -43,7 +43,7 @@ relatório técnico final.
 |---|---|
 | Nome da equipe | Definido — Lab&Order |
 | Líder | Definida — Gabriella |
-| Função de cada integrante | Definida (falta preencher Analista de Sistemas e Ferramentas) |
+| Função de cada integrante | Definida |
 | Logo da equipe | Definida |
 | Repositório no GitHub | Criado e compartilhado |
 | Nome do projeto | Lab&Order |
