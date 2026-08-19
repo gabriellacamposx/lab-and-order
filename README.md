@@ -54,6 +54,19 @@ relatório técnico final.
 As ferramentas de perícia, o caso a ser investigado e o cronograma ainda serão definidos pela
 equipe e entram aqui conforme forem fechados.
 
+## Cronograma de Entregas — Perícia Computacional
+
+| Encontro | Data       | Tópico                                          | Descrição / Entregáveis                                                                 |
+|:--------:|:-----------|:-------------------------------------------------|:------------------------------------------------------------------------------------------|
+| 1        | 05/08/2026 | Planejamento da equipe                          | Definição de papéis e responsabilidades, ferramentas de trabalho, cronograma inicial e divisão de tarefas entre os membros. |
+| 2        | 12/08/2026 | Objetivo e levantamento do caso                 | Definição do objetivo geral e específicos da perícia;  |
+| 3        | 19/08/2026 | Justificativa, cronograma e cadeia de custódia  | Justificativa da relevância do estudo; formalização do cronograma; elaboração do documento de cadeia de custódia das evidências. |
+| 4        | 26/08/2026 | Elaboração do caso                              | Construção/simulação do cenário pericial escolhido, preparação do ambiente e das evidências digitais a serem analisadas. |
+| 5        | 02/09/2026 | Registros                                       | Coleta, aquisição e documentação das evidências (imagens forenses, logs, hashes), com registro detalhado de cada etapa. |
+| 6        | 09/09/2026 | Validação dos resultados                        | Análise e verificação da integridade das evidências, checagem de hashes e revisão dos achados técnicos. |
+| 7        | 16/09/2026 | Relatório técnico                               | Redação do relatório pericial: metodologia, ferramentas utilizadas, resultados e conclusões. |
+| 8        | 23/09/2026 | Apresentação                                    | Preparação e apresentação final do projeto para a banca/professor, incluindo slides e apresentação. |
+
 ## Identidade visual
 
 A logo é um **L formado por uma escala de referência forense** — a régua graduada que aparece
