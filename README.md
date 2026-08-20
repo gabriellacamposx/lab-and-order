@@ -54,7 +54,7 @@ relatório técnico final.
 As ferramentas de perícia, o caso a ser investigado e o cronograma ainda serão definidos pela
 equipe e entram aqui conforme forem fechados.
 
-## Cronograma de Entregas — Perícia Computacional
+## Cronograma de Entregas 
 
 | Encontro | Data       | Tópico                                          | Descrição / Entregáveis                                                                 |
 |:--------:|:-----------|:-------------------------------------------------|:------------------------------------------------------------------------------------------|
