@@ -55,17 +55,27 @@ As ferramentas de perícia, o caso a ser investigado e o cronograma ainda serão
 equipe e entram aqui conforme forem fechados.
 
 ## Cronograma de Entregas 
+# Cronograma de Entregas
 
 | Encontro | Data       | Tópico                                          | Descrição / Entregáveis                                                                 |
 |:--------:|:-----------|:-------------------------------------------------|:------------------------------------------------------------------------------------------|
 | 1        | 05/08/2026 | Planejamento da equipe                          | Definição de papéis e responsabilidades, ferramentas de trabalho, cronograma inicial e divisão de tarefas entre os membros. |
-| 2        | 12/08/2026 | Objetivo e levantamento do caso                 | Definição do objetivo geral e específicos da perícia;  |
+| 2        | 12/08/2026 | Objetivo e levantamento do caso                 | Definição do objetivo geral e específicos da perícia. |
 | 3        | 19/08/2026 | Justificativa, cronograma e cadeia de custódia  | Justificativa da relevância do estudo; formalização do cronograma; elaboração do documento de cadeia de custódia das evidências. |
 | 4        | 26/08/2026 | Elaboração do caso                              | Construção/simulação do cenário pericial escolhido, preparação do ambiente e das evidências digitais a serem analisadas. |
 | 5        | 02/09/2026 | Registros                                       | Coleta, aquisição e documentação das evidências (imagens forenses, logs, hashes), com registro detalhado de cada etapa. |
 | 6        | 09/09/2026 | Validação dos resultados                        | Análise e verificação da integridade das evidências, checagem de hashes e revisão dos achados técnicos. |
 | 7        | 16/09/2026 | Relatório técnico                               | Redação do relatório pericial: metodologia, ferramentas utilizadas, resultados e conclusões. |
 | 8        | 23/09/2026 | Apresentação                                    | Preparação e apresentação final do projeto para a banca/professor, incluindo slides e apresentação. |
+| 9        | 30/09/2026 | A definir                                       | A definir |
+| 10       | 07/10/2026 | A definir                                       | A definir |
+| 11       | 14/10/2026 | A definir                                       | A definir |
+| 12       | 21/10/2026 | A definir                                       | A definir |
+| 13       | 28/10/2026 | A definir                                       | A definir |
+| 14       | 04/11/2026 | A definir                                       | A definir |
+| 15       | 11/11/2026 | A definir                                       | A definir |
+| 16       | 18/11/2026 | A definir                                       | A definir |
+| 17       | 25/11/2026 | A definir                                       | A definir |
 
 ## Identidade visual
 
